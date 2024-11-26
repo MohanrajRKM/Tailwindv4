@@ -22,7 +22,7 @@ var grid = new ej.grids.Grid({
     allowRowDragAndDrop: true,
     groupSettings: { enableLazyLoading: true },
     filterSettings: { type: 'Menu' },
-    pageSettings: { pageCount: 2, pageSizes: true },
+    pageSettings: { pageCount: 8, pageSizes: true },
     editSettings: { allowAdding: true, allowEditing: true, allowDeleting: true, mode: 'Normal' },
     toolbar: ['Add', 'Delete', 'Update', 'Cancel', 'Search', 'ExcelExport', 'PdfExport', 'CsvExport', 'Print', 'ColumnChooser'],
     contextMenuItems: ['AutoFit', 'AutoFitAll', 'SortAscending', 'SortDescending',
