@@ -22,27 +22,30 @@
   <!-- <link href="tailwind4.css" rel="stylesheet"> -->
   <!-- <link href="tailwind4-dark.css" rel="stylesheet"> -->
   <style>
-    .options-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
+      .options-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
 
-    .option-item {
-      display: flex;
-      align-items: center;
-      width: 30%;
-      /* Adjust width as needed */
-    }
+      .option-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%; /* Full width for wrapping items */
+        max-width: 400px; /* Adjust as needed for responsiveness */
+        margin-bottom: 10px; /* Add spacing between rows */
+      }
 
-    .option-label {
-      width: 70%;
-    }
+      .option-label {
+        flex: 1; /* Takes the remaining space */
+      }
 
-    .option-input {
-      width: 30%;
-      padding: 10px 10px 10px 0;
-    }
+      .option-input {
+        flex: 0 0 auto; /* Keeps input size fixed */
+        padding: 10px 10px 10px 0;
+      }
+
   </style>
 
 
@@ -50,7 +53,7 @@
 
 <body>
   <div>
-    <div style="margin-top: 100px;">
+    <div style="margin-top: 100px; margin-bottom: 50px;">
       <input type="text" tabindex="1" id='ddlelement' />
       <div class="options-container">
         <div class="option-item">
@@ -73,9 +76,37 @@
           <div class="option-label">Dark</div>
           <div class="option-input"><input type="checkbox" tabindex="0" id="styleToggle"></div>
         </div>
+        <div class="option-item">
+          <template>
+            <tr class="infinite-row">
+              <td style="width: 30%">
+                <div>Enable OnDemand: </div>
+              </td>
+              <td style="width: 70%;padding-right: 10px">
+                <div><input type="checkbox" tabindex="0" id='dataloadtype' /></div>
+              </td>
+            </tr>
+          </template>
+          <div class="col-lg-3 property-section">
+            <table id="property" title="Properties" style="width: 100%">
+              <tr>
+                <td style="width: 30%">
+                  <div class="col-md-4" style="padding-top: 8px">
+                    FilterType
+                  </div>
+                </td>
+                <td style="width: 70%;padding-right: 10px">
+                  <div id='typeddl'>
+                    <input type="text" tabindex="0" id='filtertype' />
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
       </div>
     </div>
-    <div id="Grid">
+      <div id="Grid">
     </div>
   </div>
   <link id="themeStylesheet" rel="stylesheet" href="tailwind4.css">
