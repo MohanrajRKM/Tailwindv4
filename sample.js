@@ -107,6 +107,7 @@ grid.appendTo('#Grid');
 
     function onBiggerChange(e) {
         e.checked ? document.body.classList.add('e-bigger') : document.body.classList.remove('e-bigger');
+        grid.freezeRefresh();
     }
 
     function ddChange(args) {
