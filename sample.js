@@ -247,6 +247,18 @@ grid.appendTo('#Grid');
         }
     };
 
+    var theme = new ej.buttons.CheckBox();
+    theme.appendTo('#styleToggle');
+    var themeLink = document.getElementById('themeStylesheet');
+
+    document.getElementById('styleToggle').onclick = function () {
+        if (theme.checked) {
+            themeLink.href = 'tailwind4-dark.css'; // Use the correct file extension
+        } else {
+            themeLink.href = 'tailwind4.css';
+        }
+    };
+
     var checkBoxObj = new ej.buttons.CheckBox({ change: onBiggerChange });
         checkBoxObj.appendTo('#bigger');
 
