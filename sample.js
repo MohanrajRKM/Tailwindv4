@@ -179,7 +179,7 @@ var grid = new ej.grids.Grid({
     showColumnChooser: true,
     allowRowDragAndDrop: true,
     groupSettings: { enableLazyLoading: true },
-    filterSettings: { type: 'Excel', enableInfiniteScrolling: true, },
+    filterSettings: { type: 'Menu' },
     pageSettings: { pageCount: 2, pageSizes: true },
     editSettings: { allowAdding: true, allowEditing: true, allowDeleting: true, mode: 'Normal' },
     toolbar: ['Add', 'Delete', 'Update', 'Cancel', 'Search', 'ExcelExport', 'PdfExport', 'CsvExport', 'Print', 'ColumnChooser'],
