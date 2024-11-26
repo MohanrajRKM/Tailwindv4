@@ -306,4 +306,44 @@ grid.appendTo('#Grid');
         grid.freezeRefresh();
     }
 
+    var filtertype = [
+        { id: 'Menu', type: 'Menu' },
+        { id: 'CheckBox', type: 'Checkbox' },
+        { id: 'Excel', type: 'Excel' }
+    ];
+
+    var dropDownFilterType = new ej.dropdowns.DropDownList({
+        dataSource: filtertype,
+        fields: { text: 'type', value: 'id' },
+        value: 'Menu',
+        change: function (e) {
+            var dropSelectedValue = e.value;
+            grid.filterSettings.type = dropSelectedValue;
+            grid.clearFiltering();
+            var propertyTbody = document.querySelector('#property tbody');
+            var enableInfiniteLoad;
+            if (dropSelectedValue === 'Excel' || dropSelectedValue === 'CheckBox') {
+                if (propertyTbody.children.length < 2) {
+                    var temp = document.getElementsByTagName("template")[0];
+                    var cloneTemplate = temp.content.cloneNode(true);
+                    propertyTbody.appendChild(cloneTemplate.querySelector("tr.infinite-row"));
+                    enableInfiniteLoad = new ej.buttons.CheckBox({
+                        change: function(e) {
+                            grid.filterSettings.enableInfiniteScrolling = e.checked;
+                        }
+                    });
+                    enableInfiniteLoad.appendTo('#dataloadtype');
+                } else {
+                    enableInfiniteLoad = document.getElementById('dataloadtype').ej2_instances[0];
+                    enableInfiniteLoad.checked = false;
+                    grid.filterSettings.enableInfiniteScrolling = false;
+                }
+            } else {
+                grid.filterSettings.enableInfiniteScrolling = false;
+                ej.base.remove(document.querySelector('#property tbody tr.infinite-row'));
+            }
+        }
+    });
+    dropDownFilterType.appendTo('#filtertype');
+
   
