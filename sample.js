@@ -1,6 +1,6 @@
 
 var dropdown = new ej.dropdowns.DropDownList({
-    dataSource: ["Pagination", "Virtual Scroll", "Infinite Scroll"],
+    dataSource: ["Pagination", "Virtual Scroll"],
     change: ddChange,
     value: "Pagination",
     width: 250,
@@ -130,18 +130,6 @@ grid.appendTo('#Grid');
                 allowPaging: false,
                 enableVirtualization: true,
                 enableInfiniteScrolling: false,
-            }, true)
-            // grid.clearGrouping();
-            grid.gridPager = null;
-        }
-        if (args.value === "Infinite Scroll") {
-            grid.setProperties({
-                groupSettings: { columns: [] },
-                filterSettings: { columns: [] },
-                sortSettings: { columns: [] },
-                allowPaging: false,
-                enableVirtualization: false,
-                enableInfiniteScrolling: true,
             }, true)
             // grid.clearGrouping();
             grid.gridPager = null;
