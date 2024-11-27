@@ -19,7 +19,6 @@ var grid = new ej.grids.Grid({
     allowReordering: true,
     allowExcelExport: true,
     showColumnChooser: true,
-    allowRowDragAndDrop: true,
     groupSettings: { enableLazyLoading: true },
     filterSettings: { type: 'Menu' },
     pageSettings: { pageCount: 8, pageSizes: true },
