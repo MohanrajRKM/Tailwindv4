@@ -20,9 +20,9 @@ var grid = new ej.grids.Grid({
     allowExcelExport: true,
     allowRowDragAndDrop: true,
     showColumnChooser: true,
-    groupSettings: { enableLazyLoading: true, allowReordering: true },
+    groupSettings: { enableLazyLoading: true , allowReordering: true,},
     filterSettings: { type: 'Menu' },
-    pageSettings: { pageCount: 8, pageSizes: true },
+    pageSettings: { pageCount: 7, pageSizes: true },
     editSettings: { allowAdding: true, allowEditing: true, allowDeleting: true, mode: 'Normal' },
     toolbar: ['Add', 'Delete', 'Update', 'Cancel', 'Search', 'ExcelExport', 'PdfExport', 'CsvExport', 'Print', 'ColumnChooser'],
     contextMenuItems: ['AutoFit', 'AutoFitAll', 'SortAscending', 'SortDescending',
@@ -31,10 +31,11 @@ var grid = new ej.grids.Grid({
     columns: [
         { width: 60, type: 'checkbox' },
         { field: 'OrderID', headerText: 'Order ID', isPrimaryKey: true, textAlign: 'Right', width: 120, validationRules: { required: true }},
-        { field: 'CustomerID', headerText: 'Customer ID', width: 120, editType: 'dropdownedit',  },
+        { field: 'CustomerID', headerText: 'Customer ID', width: 120, editType: 'dropdownedit' },
         { field: 'Freight', headerText: 'Frieght', width: 120, format: 'C2', editType: 'numericedit', textAlign: 'Right' },
-        { field: 'OrderDate', headerText: 'Order Date', width: 120, format: 'yMd', editType: 'datepickeredit', textAlign: 'Right' },
-        { field: 'ShipCity', headerText: 'Ship City', width: 120, validationRules: { required: true, minLength: 3, maxLength: 20 } },
+        { field: 'OrderDate', headerText: 'Order Date', width: 120, format: 'yMd', editType: 'datepickeredit', textAlign: 'Right',  },
+        { field: 'ShipName', headerText: 'Ship Name', width: 120, clipMode: 'EllipsisWithTooltip' },
+        { field: 'ShipCity', headerText: 'Ship City', width: 120, validationRules: { required: true, minLength: 3, maxLength: 20 }},
     ],
     aggregates: [{
         columns: [{
@@ -55,10 +56,10 @@ var grid = new ej.grids.Grid({
 });
 grid.appendTo('#Grid');
 
-    var grouping = new ej.buttons.CheckBox();
-    grouping.appendTo('#columnMenu');
+    var columnMenu = new ej.buttons.CheckBox();
+    columnMenu.appendTo('#columnMenu');
     document.getElementById('columnMenu').onclick = function () {
-        if (grouping.checked) {
+        if (columnMenu.checked) {
             grid.showColumnMenu = true;
         }
         else {
@@ -96,9 +97,9 @@ grid.appendTo('#Grid');
 
     document.getElementById('styleToggle').onclick = function () {
         if (theme.checked) {
-            themeLink.href = 'tailwind4-dark.css'; // Use the correct file extension
+            themeLink.href = 'tailwind3-dark.css'; // Use the correct file extension
         } else {
-            themeLink.href = 'tailwind4.css';
+            themeLink.href = 'tailwind3.css';
         }
     };
 
