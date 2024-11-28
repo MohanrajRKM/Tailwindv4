@@ -20,7 +20,7 @@ var grid = new ej.grids.Grid({
     allowExcelExport: true,
     allowRowDragAndDrop: true,
     showColumnChooser: true,
-    groupSettings: { enableLazyLoading: true },
+    groupSettings: { enableLazyLoading: true, allowReordering: true },
     filterSettings: { type: 'Menu' },
     pageSettings: { pageCount: 8, pageSizes: true },
     editSettings: { allowAdding: true, allowEditing: true, allowDeleting: true, mode: 'Normal' },
